@@ -108,3 +108,70 @@ private void FoundSave(SaveSlot slot, int i)
 }
   ```
 #### Missing Room Titles
+
+Some rooms take their name directly from the name of the scene. To solve this, you need to complicate your life.
+
+You need to add three assets: one with Type Number/ID: `GameObject`, one with Type Number/ID: `Transform`, and one with Type Number/ID: `MonoBehaviour`.
+
+Type Number/ID: `GameObject` (Path ID: `NUM_1`)
+```
+0 GameObject Base
+ 0 vector m_Component
+  1 Array Array (2 items)
+   0 int size = 2
+   [0]
+    0 ComponentPair data
+     0 PPtr<Component> component
+      0 int m_FileID = 0
+      0 SInt64 m_PathID = NUM_2
+   [1]
+    0 ComponentPair data
+     0 PPtr<Component> component
+      0 int m_FileID = 0
+      0 SInt64 m_PathID = NUM_3
+ 0 unsigned int m_Layer = 0
+ 1 string m_Name = "Location"
+ 0 UInt16 m_Tag = 0
+ 0 bool m_IsActive = true
+ ```
+ 
+ Type Number/ID: `Transform` (Path ID: `NUM_2`)
+ ```
+ 0 Transform Base
+ 0 PPtr<GameObject> m_GameObject
+  0 int m_FileID = 0
+  0 SInt64 m_PathID = NUM_1
+ 0 Quaternionf m_LocalRotation
+  0 float x = 0
+  0 float y = 0
+  0 float z = 0
+  0 float w = 1
+ 0 Vector3f m_LocalPosition
+  0 float x = 0
+  0 float y = 0
+  0 float z = 0
+ 0 Vector3f m_LocalScale
+  0 float x = 1
+  0 float y = 1
+  0 float z = 1
+ 0 vector m_Children
+  1 Array Array (0 items)
+   0 int size = 0
+ 0 PPtr<Transform> m_Father
+  0 int m_FileID = 0
+  0 SInt64 m_PathID = 0
+```
+
+Type Number/ID: `MonoBehaviour` (Path ID: `NUM_3`)
+```
+0 MonoBehaviour Base
+ 0 PPtr<GameObject> m_GameObject
+  0 int m_FileID = 0
+  0 SInt64 m_PathID = NUM_1
+ 1 UInt8 m_Enabled = 1
+ 0 PPtr<MonoScript> m_Script
+  0 int m_FileID = 1
+  0 SInt64 m_PathID = 594
+ 1 string m_Name = ""
+ 1 string title = "Location Title"
+```
