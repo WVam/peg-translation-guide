@@ -100,7 +100,7 @@ private void FoundSave(SaveSlot slot, int i)
 			str = s.MainData.addedState.ToString();
 			break;
 		}
-		text4 = string.Format("({0})", str);
+		text4 = string.Format(i18n-saveState, str);
 	}
 	return string.Format(i18n-locationTitle, text, text2, text4);
 }
