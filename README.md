@@ -1,7 +1,5 @@
 # Translatior's Guide to Project: Eden's Garden
-A list of tools and tutorials to make translations of the Project: Eden's Garden Prologue.  
-!!! note "stuff"
-bbbbb  
+A list of tools and tutorials to make translations of the Project: Eden's Garden Prologue.
 
 ## Getting started
 In order to implement your translation into the game, you will need:
