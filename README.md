@@ -4,7 +4,7 @@ A list of tools and tutorials to make translations of the Project: Eden's Garden
 bbbbb  
 
 ## Getting started
-In order to implement your [translation](#asl) into the game, you will need:
+In order to implement your translation into the game, you will need:
 * [UABEA](https://github.com/nesrak1/UABEA/releases/tag/v6)
 * [dnSpy](https://github.com/dnSpy/dnSpy/releases/tag/v6.1.8)
 
@@ -103,5 +103,6 @@ private void FoundSave(SaveSlot slot, int i)
 		text4 = string.Format("({0})", str);
 	}
 	return string.Format(i18n-locationTitle, text, text2, text4);
+}
   ```
 #### Missing Room Titles
