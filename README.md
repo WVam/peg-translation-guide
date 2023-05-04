@@ -1,12 +1,19 @@
 # Translatior's Guide to Project: Eden's Garden
-A list of tools and tutorials to make translations of the Project: Eden's Garden Prologue.
+A list of tools and tutorials to make translations of the Project: Eden's Garden Prologue.  
+!!! note "stuff"
+bbbbb  
 
 ## Getting started
-In order to implement your translation into the game, you will need:
-* UABEA
-* dnSpy
+In order to implement your [translation](#asl) into the game, you will need:
+* [UABEA](https://github.com/nesrak1/UABEA/releases/tag/v6)
+* [dnSpy](https://github.com/dnSpy/dnSpy/releases/tag/v6.1.8)
 
 ## How to find and translate the text
+### Table of contents:
+* [Dialogues](#dialogues)
+* [Examinable items](examinable-items)
+* [Menu UI](menu-ui)
+* [Game Saves](#game-saves)
 ### Dialogues
 ### Examinable Items
 ### Menu UI
@@ -17,7 +24,7 @@ In order to implement your translation into the game, you will need:
 private void FoundSave(SaveSlot slot, int i)
 {
 	// Translate these strings:
-	string i18n-saveTitle = "Slot {0} : {1}"; // This is the title of the save. {0} is the slot number. {1} is the .
+	string i18n-saveTitle = "Slot {0} : {1}"; // This is the title of the save. {0} is the slot number. {1} is the chapter and location.
 	string i18n-saveDate = "{1}/{0}/{2}"; // This is the date of the save. {0} = day, {1} = month, {2} = year.
 	string i18n-saveTime = "{0}:{1}:{2}" // This is the time of the save. {0} = hours, {1} = minutes, {2} = seconds.
 	// ------------------------
