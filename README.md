@@ -11,8 +11,8 @@ In order to implement your [translation](#asl) into the game, you will need:
 ## How to find and translate the text
 ### Table of contents:
 * [Dialogues](#dialogues)
-* [Examinable items](examinable-items)
-* [Menu UI](menu-ui)
+* [Examinable items](#examinable-items)
+* [Menu UI](#menu-ui)
 * [Game Saves](#game-saves)
 ### Dialogues
 ### Examinable Items
