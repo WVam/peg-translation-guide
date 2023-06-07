@@ -12,6 +12,7 @@ In order to implement your translation into the game, you will need:
 * [Examinable items](#examinable-items)
 * [Menu UI](#menu-ui)
 * [Game Saves](game-saves.md)
+* [Graphics and textures](graphics-and-textures.md)
 ### Dialogues
 ### Examinable Items
 #### Normal Items
