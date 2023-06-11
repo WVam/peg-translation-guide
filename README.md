@@ -8,6 +8,7 @@ In order to implement your translation into the game, you will need:
 
 ## How to find and translate the text
 ### Table of contents:
+* [How to use UABEA](uabea.md)
 * [Dialogues](#dialogues)
 * [Examinable items](#examinable-items)
 * [Menu UI](#menu-ui)
