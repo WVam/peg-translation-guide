@@ -1,4 +1,4 @@
-run# Translator's Guide to Project: Eden's Garden
+# Translator's Guide to Project: Eden's Garden
 A list of tools and tutorials to make translations of the Project: Eden's Garden Prologue.
 ## Notes
 This guide is meant for Windows 10 users. If you are on Linux, you should still be able to work on the game, but you will be unable to run it.
