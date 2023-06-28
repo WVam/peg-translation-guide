@@ -15,9 +15,6 @@ In order to implement your translation into the game, you will need:
 * [Game Saves](game-saves.md)
 * [Graphics and textures](graphics-and-textures.md)
 ### Dialogues
-#### Normal Items
-#### Doors :(
-Some are in the `Door` files, some are in the `GYM_<room name>` files. It's a bit of a mess.
 #### Characters
 ### Menu UI
 #### Increasing Text Margins
