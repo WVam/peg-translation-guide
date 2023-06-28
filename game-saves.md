@@ -1,36 +1,46 @@
-# Game Saves
-## Slot, Time and Date
+# Game saves
+In the SAVE/LOAD menu, the location, chapter, date, and time of the save are displayed. In order to translate the former two and localize the latter two, not only will you need to [modify the game assets](uabea.md), but also [the game code](dnspy.md), since some values are hardcoded.
+## Slot title, time, and date
+Once you have opened the code with dnSpy, using the tree view on the left-hand side to navigate to **Assembly-CSharp (0.0.0.0)** > **Assembly-CSharp.dll** > **{ } -** > **SaveLoadMenu** > **FoundSave**. Right-click on **FoundSave** in the tree view and click on **Edit Method...**.
+
+A text editing window will appear. Now, copy the following text (there is a button in the top-right corner that automatically copies it):
 ```csharp
-private void FoundSave(SaveSlot slot, int i)
-{
-	// Translate these strings:
-	string i18n-saveTitle = "Slot {0} : {1}"; // This is the title of the save. {0} is the slot number. {1} is the chapter and location.
-	string i18n-saveDate = "{1}/{0}/{2}"; // This is the date of the save. {0} = day, {1} = month, {2} = year.
-	string i18n-saveTime = "{0}:{1}:{2}" // This is the time of the save. {0} = hours, {1} = minutes, {2} = seconds.
-	// ------------------------
-	
-	slot.HasData = true;
-	try
+	private void FoundSave(SaveSlot slot, int i)
 	{
-		GameData data = GameSaver.GetData("save" + i.ToString());
-		slot.Title.text = string.Format(i18n-saveTitle,
-                                                (i + 1).ToString(),
-						this.EvaluateSaveTitle(data));
-		slot.Date.text = string.Format(i18n-saveDate,
-                                               data.BaseData.Date.Day.ToString().PadLeft(2, '0'),
-                                               data.BaseData.Date.Month.ToString().PadLeft(2, '0'),
-                                               data.BaseData.Date.Year.ToString());
-		slot.TimeOfSave.text = string.Format(i18n-saveTime,
-                                                     data.BaseData.Date.Hour.ToString().PadLeft(2, '0'),
-                                                     data.BaseData.Date.Minute.ToString().PadLeft(2, '0'),
-                                                     data.BaseData.Date.Second.ToString().PadLeft(2, '0'));
+		//START translation
+		string localizedSlotTitle = "Slot {0} : {1}";
+		string localizedSlotDate = "{1}/{2}/{0}";
+		string localizedSlotTime = "{0}:{1}:{2}";
+
+		bool padMonth = true;
+		bool padDay = true;
+		bool padHour = true;
+		//END translation
+
+		slot.HasData = true;
+		try
+		{
+			GameData data = GameSaver.GetData("save" + i.ToString());
+			BaseSave.TimeSave timeSave = data.BaseData.Date;
+			slot.Title.text = string.Format(localizedSlotTitle, i + 1, this.EvaluateSaveTitle(data));
+			slot.Date.text = string.Format(localizedSlotDate,
+				timeSave.Day.ToString().PadLeft(padDay ? 2 : 0, '0'),
+				timeSave.Month.ToString().PadLeft(padMonth ? 2 : 0, '0'),
+				timeSave.Year.ToString()
+			);
+			slot.TimeOfSave.text = string.Concat(localizedSlotTime
+				timeSave.Hour.ToString().PadLeft(padHour ? 2 : 0, '0'),
+				timeSave.Minute.ToString().PadLeft(2, '0'),
+				timeSave.Second.ToString().PadLeft(2, '0')
+			);
+		}
+		catch
+		{
+			Debug.LogError("Slot BaseSave data could not be read and written to the GUI");
+		}
 	}
-	catch
-	{
-		Debug.LogError("Slot BaseSave data could not be read and written to the GUI");
-	}
-}
 ```
+Then, return to dnSpy, select everything from the beginning of the line with the second curly bracket to the end of the line with the second-to-last curly bracket
 ## Room Data
 ```csharp
 {
