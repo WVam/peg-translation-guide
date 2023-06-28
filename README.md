@@ -10,7 +10,7 @@ In order to implement your translation into the game, you will need:
 ### Table of contents:
 * [How to use UABEA](uabea.md)
 * [Dialogues](#dialogues)
-* [Examinable items](#examinable-items)
+* [Examinable items](examinable-items.md)
 * [Menu UI](#menu-ui)
 * [Game Saves](game-saves.md)
 * [Graphics and textures](graphics-and-textures.md)
