@@ -14,7 +14,7 @@ If you have followed the instructions [on the main page](README.md), you already
 
 This is what UABEA looks like when first opened
 
-![image](https://github.com/WVam/peg-translation-guide/Images/UABEAFirstOpened)
+![image](Images/UABEAFirstOpened.png)
 
 You can change the theme to Dark Theme by going to **Options** > **Toggle Dark Theme**. In UABEA v5, you will need to close and re-open UABEA for the changes to take effect.
 
