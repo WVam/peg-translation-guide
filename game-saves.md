@@ -40,21 +40,23 @@ A text editing window will appear. Now, copy the following text (there is a butt
 		}
 	}
 ```
-Then, return to dnSpy, select everything from the beginning of the line with the second curly bracket to the end of the line with the second-to-last curly bracket
+Then, return to dnSpy, select everything from the beginning of the line with the second curly bracket to the end of the line with the second-to-last curly bracket, and paste,
+
+You should then replace 
 ## Room Data
 ```csharp
 {
 	// Translate these strings:
-	string i18n-locationTitle = "{0} {1} {2}" // The title of the location part of a save file.
+	string l10n-locationTitle = "{0} {1} {2}" // The title of the location part of a save file.
 	                                          // {0} is the abbreviation of the chapter name;
 	                                          // {1} is the name of the room;
-	                                          // {2} is the current state of the game, which can be either nothing or the i18n-saveState string.
+	                                          // {2} is the current state of the game, which can be either nothing or the l10n-saveState string.
 					      
-	string i18n-saveState = "({0})" // The state of the game. {0} can be replaced with one of the following strings.
-	string i18n-saveState-investigation = "Investigation"; // This state indicates an ongoing investigation.
-	string i18n-saveState-preparation = "Preparation"; // This state indicates game saves made from the prompt before the "Class Trial Preparations" menu.
-	string i18n-saveState-conclusion = "Conclusion"; // This state indicates the part of the game after a CLass Trial.
-	string i18n-saveState-END = "END"; // This state indicates game saves made from the (nonexisting) prompt at the end of a chapter.
+	string l10n-saveState = "({0})" // The state of the game. {0} can be replaced with one of the following strings.
+	string l10n-saveState-investigation = "Investigation"; // This state indicates an ongoing investigation.
+	string l10n-saveState-preparation = "Preparation"; // This state indicates game saves made from the prompt before the "Class Trial Preparations" menu.
+	string l10n-saveState-conclusion = "Conclusion"; // This state indicates the part of the game after a CLass Trial.
+	string l10n-saveState-END = "END"; // This state indicates game saves made from the (nonexisting) prompt at the end of a chapter.
 	// ------------------------
 	
 	string text = "";
@@ -75,24 +77,24 @@ Then, return to dnSpy, select everything from the beginning of the line with the
 		switch (s.MainData.addedState)
 		{
 		case AddState.Investigation:
-			str = i18n-saveState-investigation;
+			str = l10n-saveState-investigation;
 			break;
 		case AddState.Preparation:
-			str = i18n-saveState-preparation;
+			str = l10n-saveState-preparation;
 			break;
 		case AddState.Conclusion:
-			str = i18n-saveState-conclusion;
+			str = l10n-saveState-conclusion;
 			break;
 		case AddState.END:
-			str = i18n-saveState-END;
+			str = l10n-saveState-END;
 			break;
 		default:
 			str = s.MainData.addedState.ToString();
 			break;
 		}
-		text4 = string.Format(i18n-saveState, str);
+		text4 = string.Format(l10n-saveState, str);
 	}
-	return string.Format(i18n-locationTitle, text, text2, text4);
+	return string.Format(l10n-locationTitle, text, text2, text4);
 }
   ```
 ## Missing Room Titles
